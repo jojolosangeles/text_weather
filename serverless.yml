@@ -49,6 +49,7 @@ provider:
 package:
   include:
     - geocode/**
+    - weather/**
 #    - include-me.js
 #    - include-me-dir/**
 #  exclude:
