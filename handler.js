@@ -20,7 +20,7 @@ module.exports.hello = async (event, context, callback) => {
     .then((response) => {
       let weatherData = weather.getData(response.data)
       const twiml = new MessagingResponse();
-      twiml.message(`${geoPart.address}\n${geoPart.latitude},${geoPart.longitude}\n${weatherData.summary}, ${weatherData.temperature}`);
+      twiml.message(`${geoPart.address}\nhttp://maps.google.com/maps?q=${geoPart.latitude},${geoPart.longitude}\n${weatherData.summary}, ${weatherData.temperature}`);
       const twilioResponse = {
         statusCode: 200,
         headers: {'Content-Type': 'text/xml'},
