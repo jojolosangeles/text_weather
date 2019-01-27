@@ -2,12 +2,7 @@
 var apikey = process.env.DARK_SKY_API_KEY
 
 var getUrl = (latitude, longitude) => {
-  console.log("weather getUrl")
-  console.log(`latitude ${latitude}`)
-  console.log(`longitude ${longitude}`)
-  let result = `https://api.forecast.io/forecast/${apikey}/${latitude},${longitude}`
-  console.log(result)
-  return result
+  return `https://api.forecast.io/forecast/${apikey}/${latitude},${longitude}`
 }
 
 var getData = (body) => {
