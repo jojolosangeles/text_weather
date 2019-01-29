@@ -24,9 +24,17 @@ provider:
   runtime: nodejs8.10
   stage: dev
   region: us-west-1
-  environment:
-    DARK_SKY_API_KEY: _darksky_api_key_goes_here_
-    MAPS_API_KEY: _google_maps_api_key_goes_here_
+  #
+  # Two environment variables required: DARK_SKY_API_KEY and MAPS_API_KEY
+  #
+  # Put these in "ENvironment Variables" section of deployed Lambda function.
+  #
+  # They can also be put in the "environment" below, but that risks
+  # exposure if this file gets pushed to github
+  #
+  # environment:
+  #   DARK_SKY_API_KEY: _darksky_key_goes_here_
+  #   MAPS_API_KEY: _google_maps_api_key_goes_here
 # you can add statements to the Lambda function's IAM Role here
 #  iamRoleStatements:
 #    - Effect: "Allow"
