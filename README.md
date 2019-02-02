@@ -16,14 +16,14 @@ of your location, and the weather at that location.
 1. A text message is received by Twilio
 2. Twilio POSTs that message to the configured URL
 3. The serverless function receives that message, and does the following:
-- sends the message body to the Google Maps API for reverse geocoding.
-- from the Google Maps data, extracts the **standardized human-readable location**, and
+   - sends the message body to the Google Maps API for reverse geocoding.
+   - from the Google Maps data, extracts the **standardized human-readable location**, and
  that location's **latitude** and **longitude**.
-- sends the latitude and longitude to the DarkSky API.
-- from the DarkSky data, extracts the **summary** and **current temperature**.
-- responds to the POST with a TwiML XML message to send
+   - sends the latitude and longitude to the DarkSky API.
+   - from the DarkSky data, extracts the **summary** and **current temperature**.
+   - responds to the POST with a TwiML XML message to send
 a text message response containing the **standardized human-readable location**, the **summary**, and the **current temperature**
-4. Twilio gets the TwiML response, and sends the text
+4. Twilio receives the TwiML response, and sends the text
 message indicated by the TwiML.
 
 ## Running locally
@@ -47,8 +47,12 @@ Verify the two keys are set:
 env | grep "MAPS_API_KEY\|DARK_SKY_API_KEY"
 ```
 To run remotely, these values need to be manually put
-in the Lambda Environment (one time set-up)
-(insert screenshow of AWS lambda environment-setting screen)
+in the Lambda Environment.  _NOTE: these need to be manually
+set each time the function name changes (it is a new deployment
+versus an update to an existing deployment)_
+
+Navigate to the "Environment" section of the Lambda Function, on the
+"Configuration" tab.
 
 #### step 2 of 4: starting the serverless application locally
 
