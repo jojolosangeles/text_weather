@@ -5,7 +5,7 @@ const weather = require('./weather/weather')
 const axios = require('axios')
 const MessagingResponse = require('twilio').twiml.MessagingResponse;
 
-module.exports.weather = async (event, context, callback) => {
+module.exports.location2weather = async (event, context, callback) => {
   let url_parts = url.parse(`http://blah.com?${event.body}`, true)
   let geoUrl = geocode.getUrl(url_parts.query.Body)
   let geoResponse = await axios.get(geoUrl)

@@ -67,11 +67,11 @@ package:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.weather
+  location2weather:
+    handler: handler.location2weather
     events:
       - http:
-          path: message
+          path: location2weather
           method: post
 
 #          method: get
